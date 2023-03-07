@@ -1,3 +1,4 @@
+// Function for showing the notification when a letter is already selected
 export function showNotification(setter) {
     setter(true);
     setTimeout(() => {
@@ -5,7 +6,7 @@ export function showNotification(setter) {
     }, 2000);
 }
 
-
+// Function for checking if the game is won or lost
 export function checkWin(correct, wrong, word) {
     let status = 'win';
 
