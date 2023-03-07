@@ -91,43 +91,53 @@
   }
   
   .popup-container {
-    background-color: rgba(0, 0, 0, 0.3);
     position: fixed;
+    background-color: #00000048;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    /* display: flex; */
     display: none;
     align-items: center;
     justify-content: center;
+    z-index: 10;
   }
   
   .popup {
-    background: #1f1e1e;
-    color: #e0e0e0;
-    border-radius: 5px;
-    box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
+    background: #e0e0e0;
+    color: #1f1e1e;
     padding: 20px;
     text-align: center;
+    border-radius: 50px;
+
   }
   
   .popup button {
     cursor: pointer;
-    background-color: #fff;
-    color: #1f1e1e;
+    color: #000000;
     border: 0;
     margin-top: 20px;
     padding: 12px 20px;
     font-size: 16px;
+    border-radius: 50px;
+    border-radius: 50px;
+    background: #e0e0e0;
+    box-shadow:  5px 5px 13px #5e5e5e,
+                 -5px -5px 13px #ffffff;
   }
   
   .popup button:active {
-    transform: scale(0.98);
+    border-radius: 50px;
+    background: linear-gradient(145deg, #cacaca, #f0f0f0);
+    box-shadow:  5px 5px 13px #5e5e5e,
+                 -5px -5px 13px #ffffff;
   }
   
   .popup button:focus {
     outline: 0;
+  }
+  .popup button:hover {
+    color: #2b2b2b;
   }
   
   .notification-container {
@@ -135,6 +145,7 @@
     border-radius: 10px 10px 0 0;
     padding: 15px 20px;
     position: absolute;
+    left: 40%;
     bottom: -50px;
     transition: transform 0.3s ease-in-out;
   }
@@ -178,6 +189,7 @@
     background: #e0e0e0;
     box-shadow:  20px 20px 60px #bebebe,-20px -20px 60px #ffffff;
     cursor: pointer;
+    z-index: 0;
   }
 
   .info:hover {
@@ -209,6 +221,7 @@
       width: 250px;
       border-radius: .4em;
       z-index: 100;
+      border: none;
     }
     .infoBox:after {
       content: '';
@@ -227,6 +240,7 @@
     h6 {
       font-size: 20px;
       text-align: center;
+      padding-top: 0;
     }
     .infoBox p {
       width: 90%;

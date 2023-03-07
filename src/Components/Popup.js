@@ -14,7 +14,7 @@ const Popup = ({correctLetters, wrongLetters, selectedWord, setPlayable, playAga
     finalMessage = 'Congratulations! You won!';
     playable = false;
   } else if (checkWin(correctLetters, wrongLetters, selectedWord) === 'lose') {
-    finalMessage = 'Unfortunately you lost.';
+    finalMessage = 'Oh no! You lost.';
     finalMessageRevealWord = `The word was: ${selectedWord}!`;
     playable = false;
   }
@@ -29,7 +29,7 @@ const Popup = ({correctLetters, wrongLetters, selectedWord, setPlayable, playAga
       <div className="popup">
         <h2>{finalMessage}</h2>
         <h3>{finalMessageRevealWord}</h3>
-        <button onClick={playAgain}>Play Again</button>
+        <button onClick={playAgain}>Play Again?</button>
       </div>
     </div>
       

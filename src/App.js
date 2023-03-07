@@ -19,9 +19,8 @@ import Popup from        './Components/Popup'
 import { showNotification as show } from './Helpers/helpers'
 //===========================================================
 
-
-//Array of possible words to be selected by the game
-const words = ['jellyfish', 'moose', 'penguin', 'elephant', 'rhinoceros', 'hippopotamus', 'giraffe', 'gorilla', 'kangaroo', 'lemur', 'lion', 'panda', 'polar bear', 'sloth', 'tiger', 'zebra', 'alligator', 'ant', 'bear', 'bee', 'bird', 'camel', 'cat', 'cheetah', 'chicken', 'chimpanzee', 'cow', 'crocodile', 'deer', 'dog', 'dolphin', 'duck', 'eagle', 'elephant', 'fish', 'fly', 'fox', 'frog', 'giraffe', 'goat', 'goldfish', 'hamster', 'hippopotamus', 'horse', 'kangaroo', 'kitten', 'lion', 'lobster', 'monkey', 'octopus', 'owl', 'panda', 'pig', 'puppy', 'rabbit', 'rat', 'scorpion', 'seal', 'shark', 'sheep', 'snail', 'snake', 'spider', 'squirrel', 'tiger', 'turtle', 'wolf', 'zebra']
+//Imported Array of possible words to be selected by the game
+import { words } from './wordSelection'
 
 //Randomly selects a word from the array
 let selectedWord = words[Math.floor(Math.random() * words.length)]
@@ -82,22 +81,21 @@ function App() {
     <>
       <Header />
       <div className='game-container'>
-        <Figure wrongLetters = {wrongLetters}/>
+        <Figure wrongLetters       = {wrongLetters}/>
         <WrongLetters wrongLetters = {wrongLetters}/>
         <Word
-          selectedWord = {selectedWord} 
+          selectedWord   = {selectedWord} 
           correctLetters = {correctLetters}/>
       </div>
       <Popup 
         correctLetters = {correctLetters} 
-        wrongLetters = {wrongLetters} 
-        selectedWord = {selectedWord} 
-        setPlayable = {setPlayable} 
-        playAgain = {playAgain}/>
+        wrongLetters   = {wrongLetters} 
+        selectedWord   = {selectedWord} 
+        setPlayable    = {setPlayable} 
+        playAgain      = {playAgain}/>
       <Notification showNotification = {showNotification}/>
-
       <button className = 'reload' onClick = {playAgain}><i className="fa-solid fa-arrows-rotate"></i><br/></button>
-      <div className = 'infoBox'><h6>Rules:</h6><p>Press keys on keyboard to guess word. If you pick more than 5 wrong words and the game ends. Press the <i className="fa-solid fa-arrows-rotate"></i> button to restart game.</p></div>
+      <div    className = 'infoBox'><h6>Rules:</h6><p>Press keys on keyboard to guess word. If you pick more than 5 wrong letters the game ends. Press the <i className="fa-solid fa-arrows-rotate"></i> button to restart game.</p></div>
       <button className = 'info' onClick={showInfo}><i className="fa-solid fa-circle-info"></i></button>
     </>
   )

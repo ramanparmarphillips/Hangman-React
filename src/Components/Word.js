@@ -1,5 +1,7 @@
+//React imports
 import React from 'react'
 
+//Word component
 const Word = ({ selectedWord, correctLetters}) => {
     return (
         <div className="word">
